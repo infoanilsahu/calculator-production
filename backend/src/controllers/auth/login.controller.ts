@@ -30,8 +30,8 @@ export const login = asyncHandler(async (req:Request, res:Response) => {
 
     const option: CookieOptions = {
         httpOnly: true,
-        secure: false,     // production - secure: trure
-        sameSite: "lax",   // production - sameSite: "none"
+        secure: true,     // production - secure: trure
+        sameSite: "none",   // production - sameSite: "none"
     }
 
     return res.status(200)
