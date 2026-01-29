@@ -7,7 +7,7 @@ export const validate = async (req:Request,res: Response,next: NextFunction) => 
     if(errors.isEmpty()) return next();
 
     const extractError: any = [];
-    errors.array().map( (data) => extractError.push({
+    errors.array().map( (data: any) => extractError.push({
         [data.type]: data.msg
     }))
     throw new ApiError(422,"Recive error on validation",extractError)
