@@ -70,7 +70,7 @@ function SI() {
 
   return (
     <>
-      <div className="container w-full">
+      <div className="container w-full sm:w-[65%] lg:w-[40%] ">
         <div className="data w-full">
             <div className="form flex flex-col items-center justify-center w-full p-6 ">
               <form onSubmit={handleSubmit(onSubmit)} className="w-full">
