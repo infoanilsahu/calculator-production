@@ -78,7 +78,7 @@ export default function CI() {
       <div className="container w-full">
         <div className="data w-full">
             <div className="form flex flex-col items-center justify-center w-full p-6 ">
-              <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+              <form onSubmit={handleSubmit(onSubmit)} className="w-full sm:w-[65%] lg:w-[40%]">
                 <div className="input flex flex-col sm:flex-row flex-wrap gap-4 w-full ">
                     <div className="principle flex flex-col gap-3 w-full ">
                         <label htmlFor="principle" className="font-normal" >Principle (p) : </label>
