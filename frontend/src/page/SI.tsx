@@ -70,28 +70,28 @@ function SI() {
 
   return (
     <>
-      <div className="container">
-        <div className="data">
-            <div className="form flex flex-col items-center justify-center ">
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="input flex flex-col sm:flex-row flex-wrap gap-4 ">
-                    <div className="principle flex flex-col gap-3 ">
+      <div className="container w-full">
+        <div className="data w-full">
+            <div className="form flex flex-col items-center justify-center w-full p-6 ">
+              <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+                <div className="input flex flex-col sm:flex-row flex-wrap gap-4 w-full ">
+                    <div className="principle flex flex-col gap-3 w-full ">
                         <label htmlFor="principle" className="font-normal" >Principle (p) : </label>
                         <input type="number" {...register("principle",{required: {value: true,message: "principle is required"},valueAsNumber: true})} placeholder="1526 Rs" className="outline-1 p-2 rounded-md font-normal " />
                         {errors.principle && <div className="text-red-600 font-normal ">{errors.principle.message}</div>}
                     </div>
-                    <div className="rate flex flex-col gap-3 ">
+                    <div className="rate flex flex-col gap-3 w-full ">
                         <label htmlFor="rate" className="font-normal" >Rate (R) : </label>
                         <input type="number" {...register("rate",{required: {value: true,message: "rate is required"},valueAsNumber: true})} placeholder="8 %" className="outline-1 p-2 rounded-md font-normal " />
                         {errors.rate && <div className="text-red-600 font-normal ">{errors.rate.message}</div>}
                     </div>
-                    <div className="time flex flex-col gap-3 ">
+                    <div className="time flex flex-col gap-3 w-full ">
                         <label htmlFor="time" className="font-normal" >Time (T) : </label>
                         <input type="number" {...register("time",{required: {value: true,message: "time is required"},valueAsNumber: true})} placeholder="5 Year" className="outline-1 p-2 rounded-md font-normal " />
                         {errors.time && <div className="text-red-600 font-normal ">{errors.time.message}</div>}
                     </div>
                 </div>
-                <div className="submit ">
+                <div className="submit w-full ">
                     <button type="submit" className="text-[#edecec] rounded-md p-2 bg-black font-bold w-full my-6 " >simple interest</button>
                     <div className="answer text-lg w-full flex items-center justify-center "><span className="font-normal">Answer : &nbsp;</span><span className="font-medium">{Number.isInteger(answer) ? answer : answer.toFixed(3)}</span></div>
                 </div>

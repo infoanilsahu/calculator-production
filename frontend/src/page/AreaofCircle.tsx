@@ -67,12 +67,12 @@ function AreaofCircle() {
 
   return (
     <>
-      <div className="container">
-        <div className="data">
-          <div className="form flex flex-col items-center justify-center ">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="input p-1 px-2 pl-3 flex gap-4 outline-1 items-center justify-center rounded-md my-4 ">
-                <div className="radius flex flex-col  ">
+      <div className="container w-full">
+        <div className="data w-full">
+          <div className="form flex flex-col items-center justify-center w-full p-6 ">
+            <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+              <div className="input p-1 px-2 pl-3 flex gap-4 outline-1 items-center justify-center rounded-md my-4 w-full ">
+                <div className="radius flex flex-col w-full ">
                   <label
                     htmlFor="radius"
                     className="font-normal opacity-85 text-sm md:text-lg"
