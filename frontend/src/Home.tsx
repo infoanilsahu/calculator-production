@@ -1,12 +1,12 @@
 
 import Login from "./components/Login";
-import Navbar from "./components/Navbar";
-import History from "./components/History.tsx";
+import Navbar from "./components/common/Navbar";
+import History from "./components/common/History";
 import Register from "./components/Register";
 import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "./redux/store.ts";
-import { alternative } from "./redux/cross/cross.ts";
-import Cart from "./components/Cart.tsx";
+import type { RootState } from "./redux/store";
+import { alternative } from "./redux/cross/cross";
+import Cart from "./components/common/Cart";
 import triangle from './assets/triangle.png'
 import simpleinterest from './assets/simpleinterest.png'
 import compoundinterest from './assets/compoundinterest.png'

@@ -1,4 +1,4 @@
-import Cart from '../components/Cart'
+import Cart from '../components/common/Cart'
 import circle from '../assets/circle.png'
 
 

@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import type { RootState } from '../redux/store.ts'
-import { alternative } from "../redux/cross/cross.ts";
-import search from "../icon/search.svg"
-import account from "../icon/account.svg"
+import type { RootState } from '../../redux/store'
+import { alternative } from "../../redux/cross/cross";
+import search from "../../icon/search.svg"
+import account from "../../icon/account.svg"
 import { Link } from 'react-router-dom';
 
 
