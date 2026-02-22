@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector,useDispatch } from "react-redux";
-import search from '../icon/search.svg'
-import account from '../icon/account.svg'
-import arrow from '../icon/arrow.svg'
-import type { RootState } from '../redux/store';
-import { setUser } from '../redux/user/user.ts'
-import { setUserLoginTrue } from '../redux/user/userLogin.ts'
+import search from '../../icon/search.svg'
+import account from '../../icon/account.svg'
+import arrow from '../../icon/arrow.svg'
+import type { RootState } from '../../redux/store';
+import { setUser } from '../../redux/user/user'
+import { setUserLoginTrue } from '../../redux/user/userLogin'
 import { useEffect } from 'react';
 import axios from 'axios';
 

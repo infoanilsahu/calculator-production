@@ -1,12 +1,12 @@
 import { useSelector,useDispatch } from "react-redux";
-import type { RootState } from "../redux/store.ts";
-import { addHistory,clearHistory, setUser } from "../redux/user/user.ts";
+import type { RootState } from "../../redux/store";
+import { addHistory,clearHistory, setUser } from "../../redux/user/user";
 import { useEffect } from "react";
-import { formatDateTime } from "../function/dateTime.ts";
-import logout from '../icon/logout.svg'
+import { formatDateTime } from "../../function/dateTime";
+import logout from '../../icon/logout.svg'
 import axios from "axios";
-import { clearUser } from "../redux/user/user.ts";
-import { setUserLoginFalse, setUserLoginTrue } from "../redux/user/userLogin.ts";
+import { clearUser } from "../../redux/user/user";
+import { setUserLoginFalse, setUserLoginTrue } from "../../redux/user/userLogin";
 import { useNavigate } from "react-router-dom";
 
 

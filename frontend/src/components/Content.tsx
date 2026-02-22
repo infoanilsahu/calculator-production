@@ -1,5 +1,5 @@
-import Nav from './Nav'
-import History from './History'
+import Nav from './common/Nav'
+import History from './common/History'
 import { Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import type { RootState } from '../redux/store';
