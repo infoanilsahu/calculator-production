@@ -3,15 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { router } from "./router/route";
 import { Provider } from 'react-redux';
-import { store } from "./redux/store.js";
+import { store } from "./redux/store";
 import { RouterProvider } from 'react-router-dom';
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+
     <Provider store={store}>
+
       <RouterProvider router={router} />
 
     </Provider>
+    
  </StrictMode>,
 )
