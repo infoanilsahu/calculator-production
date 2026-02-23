@@ -3,16 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../redux/store";
 import axios from "axios";
 import { setUserLoginTrue,setUserLoginFalse } from "../redux/user/userLogin";
-import {useNavigate} from "react-router-dom"; 
+import { Navigate } from "react-router-dom"; 
 
 interface prop {
     children: JSX.Element;
 }
 
-export function PublicRoute({ children }: prop) {
+export function PrivateRoute({ children }: prop) {
     const userLogin = useSelector((state: RootState) => state.userLogin.value);
     const dispatch = useDispatch();
-    const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
     const apiUrl = import.meta.env.VITE_DOMAIN;
 
@@ -38,7 +37,7 @@ export function PublicRoute({ children }: prop) {
         return ;
     }
 
-    return userLogin ? navigate("/") : children
+    return userLogin ? children : <Navigate to="/" replace />
 }
 
 

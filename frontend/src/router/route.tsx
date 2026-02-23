@@ -1,5 +1,5 @@
 import { createBrowserRouter,createRoutesFromElements, Route } from "react-router-dom";
-import { TokenCheck } from "../middleware/authmiddleware";
+import { PrivateRoute, TokenCheck } from "../middleware/authmiddleware";
 import App from "../App";
 import Home from "../Home";
 import Content from "../components/Content";
@@ -9,6 +9,7 @@ import CI from "../page/CI";
 import Circle from "../page/Circle";
 import AreaofCircle from "../page/AreaofCircle";
 import History from '../components/common/History'
+import { HistoryTab } from "../middleware/historyTab";
 
 
 export const router = createBrowserRouter(createRoutesFromElements(
@@ -31,7 +32,7 @@ export const router = createBrowserRouter(createRoutesFromElements(
         <Route index element={<AreaofCircle />} />
       </Route>
     </Route>
-    <Route path='history' element={<Content nav='History' />} >
+    <Route path='history' element={<PrivateRoute><HistoryTab><Content nav='History' /></HistoryTab></PrivateRoute>} >
       <Route index element={<History />} />
     </Route>
     
