@@ -5,6 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { triggerHistoryRefresh } from "../redux/user/user.ts";
 import type { RootState } from "../redux/store.ts";
 
+import {
+  InputGroup,
+  InputGroupInput,
+  InputGroupAddon,
+} from "../components/ui/input-group.tsx";
+import { FieldLabel } from "../components/ui/field.tsx";
+
 interface Inputs {
   radius: number;
 }
@@ -49,7 +56,7 @@ function AreaofCircle() {
       answer: cal,
     };
     try {
-      if(!userLogin) return;
+      if (!userLogin) return;
       await axios.post(`${apiUrl}/api/v1/upload/history`, history, {
         withCredentials: true,
       });
@@ -70,34 +77,33 @@ function AreaofCircle() {
       <div className="container w-full ">
         <div className="data w-full">
           <div className="form flex flex-col items-center justify-center w-full p-6 ">
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full sm:w-[65%] lg:w-[40%]">
-              <div className="input p-1 px-2 pl-3 flex gap-4 outline-1 items-center justify-center rounded-md my-4 ">
-                <div className="radius flex flex-col w-full ">
-                  <label
-                    htmlFor="radius"
-                    className="font-normal opacity-85 text-sm md:text-lg"
-                  >
-                    radius :{" "}
-                  </label>
-                  <input
-                    type="number"
-                    {...register("radius", {
-                      required: { value: true, message: "radius is required" },
-                      valueAsNumber: true,
-                    })}
-                    placeholder="6 cm"
-                    className="no-spinner lg:text-xl w-full md:w-80 outline-none rounded-md font-normal "
-                  />
-                </div>
-                <div className="btn h-full">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="w-full sm:w-[65%] lg:w-[40%]"
+            >
+              <FieldLabel className="font-normal text-[16px] mb-2 md:text-lg">
+                radius
+              </FieldLabel>
+              <InputGroup className="h-fit font-normal ">
+                <InputGroupInput
+                  type="number"
+                  id="inline-end-input"
+                  placeholder="18 cm"
+                  {...register("radius", {
+                    required: { value: true, message: "radius is required" },
+                    valueAsNumber: true,
+                  })}
+                  className=" lg:text-lg"
+                />
+                <InputGroupAddon align="inline-end" className="h-fit w-fit">
                   <button
                     type="submit"
-                    className="text-[#edecec] h-full md:text-xl rounded-md p-2 px-5 bg-black font-bold "
+                    className="text-[#edecec] h-full md:text-lg rounded-md p-2 px-5 bg-black font-bold "
                   >
                     Area
                   </button>
-                </div>
-              </div>
+                </InputGroupAddon>
+              </InputGroup>
               <div className="submit ">
                 {errors.radius && (
                   <div className="text-red-600 font-normal ">
