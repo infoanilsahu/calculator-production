@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 // import trianle from '../assets/triangle.svg'
 
+
 interface cart {
     title: string;
     link: string;
