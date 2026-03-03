@@ -7,17 +7,16 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "./redux/store";
 import { alternative } from "./redux/cross/cross";
 import Cart from "./components/common/Cart";
-import triangle from './assets/triangle.png'
-import simpleinterest from './assets/simpleinterest.png'
-import compoundinterest from './assets/compoundinterest.png'
-import circle from './assets/circle.png'
+import { carts } from "./function/cart";
 
-function Home() {
+
+export default function Home() {
   const userLogin = useSelector( (state: RootState) => state.userLogin.value)
   const log = useSelector((state: RootState) => state.log.value);
   const cross = useSelector((state: RootState) => state.cross.value);
   const dispatch = useDispatch();
 
+  console.log(userLogin);
   
 
   return (
@@ -44,10 +43,11 @@ function Home() {
             <div className="home-data flex flex-1 sm:justify-between h-full w-full ">
               <div className="carts w-full h-full overflow-y-scroll">
                 <div className="cal p-2 lg:p-5 flex flex-1 flex-col sm:flex-row sm:flex-wrap  ">
-                  <Cart title="Triangle" image={triangle} link="/triangle" />
-                  <Cart title="Circle" image={circle} link="/circle" />
-                  <Cart title="Compound Interest" link="/compoundinterest" image={compoundinterest} />
-                  <Cart title="Simple Interest" link="/simpleinterest" image={simpleinterest} />
+                  { 
+                    carts.map( (data) => (
+                      <Cart title={data.title} image={data.image} link={data.link} />
+                    ))
+                  }
                 </div>
                   <div className="w-full h-28"></div>
               </div>
@@ -62,4 +62,4 @@ function Home() {
   );
 }
 
-export default Home;
+
